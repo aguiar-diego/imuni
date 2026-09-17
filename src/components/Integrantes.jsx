@@ -14,7 +14,7 @@ const MEMBROS = [
     nome: 'Luis Gustavo Cerqueira',
     papel: 'Desenvolvimento back-end',
     ra: 'Nº USP 15525959',
-    foto: 'integrantes/gustavo.jpg',
+    foto: 'integrantes/gustavo_gpti.jpg',
   },
   {
     nome: 'Mateus de Sales',
