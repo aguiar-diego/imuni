@@ -1,0 +1,152 @@
+.canvas__lead {
+  margin-bottom: 34px;
+  max-width: 56ch;
+  font-size: 1.02rem;
+}
+
+.bmc {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: auto auto auto;
+  grid-template-areas:
+    "parc ativ valor rel  seg"
+    "parc rec  valor can  seg"
+    "custos custos custos receita receita";
+  gap: 10px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 10px;
+  background: var(--bg-deep);
+  box-shadow: var(--shadow-sm);
+}
+
+.bmc__parcerias { grid-area: parc; }
+.bmc__atividades { grid-area: ativ; }
+.bmc__recursos { grid-area: rec; }
+.bmc__valor { grid-area: valor; }
+.bmc__relacionamento { grid-area: rel; }
+.bmc__canais { grid-area: can; }
+.bmc__segmentos { grid-area: seg; }
+.bmc__custos { grid-area: custos; }
+.bmc__receita { grid-area: receita; }
+
+.bmc__block {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.16s ease, box-shadow 0.16s ease, border-color 0.16s ease;
+}
+
+.bmc__block:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--teal);
+  z-index: 1;
+}
+
+.bmc__head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--line);
+}
+
+.bmc__icon {
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 7px;
+  background: var(--teal-tint);
+  font-size: 0.9rem;
+  line-height: 1;
+}
+
+.bmc__head h3 {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--teal-dark);
+}
+
+.bmc__block ul {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.bmc__block li {
+  position: relative;
+  padding-left: 15px;
+  font-size: 0.83rem;
+  line-height: 1.45;
+  color: var(--ink-soft);
+}
+
+.bmc__block li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 7px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--teal);
+}
+
+/* Proposta de valor em destaque */
+.bmc__block--valor {
+  background: linear-gradient(165deg, var(--teal-tint), var(--mint-tint));
+  border-color: var(--teal);
+  box-shadow: inset 0 0 0 1px rgba(14, 165, 183, 0.35);
+}
+
+.bmc__block--valor .bmc__icon {
+  background: #fff;
+}
+
+.bmc__block--valor .bmc__head {
+  border-bottom-color: rgba(14, 165, 183, 0.3);
+}
+
+.bmc__block--valor li {
+  color: var(--ink);
+}
+
+.bmc__block--valor li::before {
+  background: var(--mint-dark);
+}
+
+@media (max-width: 860px) {
+  .bmc {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "valor valor"
+      "parc  ativ"
+      "rec   rel"
+      "can   seg"
+      "custos receita";
+  }
+}
+
+@media (max-width: 560px) {
+  .bmc {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "valor"
+      "seg"
+      "can"
+      "rel"
+      "ativ"
+      "rec"
+      "parc"
+      "custos"
+      "receita";
+  }
+}
