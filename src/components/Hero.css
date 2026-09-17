@@ -1,0 +1,99 @@
+.hero {
+  padding: 76px 0 64px;
+  border-bottom: 1px solid var(--line);
+}
+
+.hero__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 56px;
+}
+
+.hero__text {
+  max-width: 560px;
+}
+
+.hero__eyebrow {
+  font-size: 0.85rem;
+  color: var(--teal-dark);
+  margin-bottom: 14px;
+}
+
+.hero h1 {
+  font-size: clamp(2.1rem, 4vw, 3.1rem);
+  letter-spacing: -0.01em;
+}
+
+.hero__lead {
+  margin-top: 20px;
+  font-size: 1.05rem;
+  max-width: 46ch;
+}
+
+.hero__actions {
+  display: flex;
+  gap: 14px;
+  margin-top: 32px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  height: 44px;
+  padding: 0 20px;
+  border-radius: var(--radius);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.btn--primary {
+  background: var(--teal);
+  color: #fff;
+  border: 1px solid var(--teal);
+}
+
+.btn--primary:hover {
+  background: var(--teal-dark);
+  border-color: var(--teal-dark);
+}
+
+.btn--ghost {
+  color: var(--ink);
+  border: 1px solid var(--line);
+}
+
+.btn--ghost:hover {
+  border-color: var(--teal);
+  color: var(--teal-dark);
+}
+
+.hero__stamp {
+  flex-shrink: 0;
+  color: var(--teal);
+  opacity: 0.9;
+  margin-left: -px;
+}
+
+.hero__stamp img {
+  width: 300px;
+  height: 300px;
+  object-fit: contain;
+}
+
+@media (max-width: 900px) {
+  .hero__row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+  }
+  .hero__stamp {
+    margin-left: 0;
+  }
+  .hero__stamp img {
+    width: 440px;
+    height: 440px;
+  }
+}
