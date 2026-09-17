@@ -1,0 +1,67 @@
+.section {
+  padding: 72px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.section h2 {
+  font-size: clamp(1.6rem, 2.6vw, 2.1rem);
+  margin-bottom: 28px;
+}
+
+.quem-somos__row {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 64px;
+  align-items: start;
+}
+
+.quem-somos__text p {
+  margin-top: 16px;
+  max-width: 62ch;
+}
+
+.quem-somos__text p:first-of-type {
+  margin-top: 0;
+}
+
+.quem-somos__text strong {
+  color: var(--teal-dark);
+  font-weight: 600;
+}
+
+.ficha {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--paper-card);
+  padding: 6px 24px;
+}
+
+.ficha__item {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.ficha__item:last-child {
+  border-bottom: none;
+}
+
+.ficha__item dt {
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+}
+
+.ficha__item dd {
+  margin: 0;
+  font-weight: 500;
+  text-align: right;
+}
+
+@media (max-width: 860px) {
+  .quem-somos__row {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}

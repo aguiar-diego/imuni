@@ -35,11 +35,27 @@ npm run build     # gera a pasta dist/
 npm run deploy    # publica no GitHub Pages (branch gh-pages)
 ```
 
-O site publicado fica em: https://aguiar-diego.github.io/imuni/
-
 ## Estrutura
 
-- `src/App.jsx` — todas as seções do site (Navbar, Hero, Sobre, Objetivos SMART, Canvas, Documentos, Equipe, Footer). O conteúdo fica em arrays no topo do arquivo, fáceis de editar.
-- `src/App.css` — estilos das seções.
-- `src/index.css` — estilos base e variáveis de cor (tema).
-- `public/docs/` — documentos para download (PDF da proposta, etc.).
+O site é uma single-page composta por componentes independentes, cada um com seu próprio CSS:
+
+- `src/App.jsx` — monta a página e chama o hook de animação.
+- `src/components/` — seções do site:
+  - `Header` / `Footer` — cabeçalho fixo e rodapé (com o `Logo`).
+  - `Logo` — wordmark do Imuni (SVG).
+  - `Hero` — abertura com a proposta do projeto.
+  - `QuemSomos` — descrição do projeto e ficha da disciplina.
+  - `Smart` — os cinco objetivos SMART.
+  - `Canvas` — o Business Model Canvas.
+  - `Integrantes` — a equipe (fotos em `public/integrantes/`).
+  - `Documentos` — entregas da disciplina com status e links.
+- `src/hooks/useReveal.js` — animação de "reveal" ao rolar a página.
+- `src/index.css` — variáveis de tema, base e utilitários de animação.
+- `public/docs/` — documentos para download (ex.: PDF da proposta).
+- `public/integrantes/` — fotos dos integrantes.
+
+### Como editar o conteúdo
+
+O conteúdo de cada seção fica em arrays no topo do respectivo componente
+(ex.: `MEMBROS` em `Integrantes.jsx`, `DOCUMENTOS` em `Documentos.jsx`),
+o que torna a edição simples sem mexer no layout.

@@ -1,0 +1,145 @@
+.canvas__lead {
+  margin-top: -14px;
+  margin-bottom: 32px;
+  max-width: 56ch;
+}
+
+/* Grid clássico do Business Model Canvas.
+   Topo: 5 colunas onde Atividades/Recursos e Relacionamento/Canais
+   empilham; Proposta de Valor ocupa 2 linhas ao centro.
+   Base: Custos e Receita dividem a largura total. */
+.bmc {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: auto auto auto;
+  grid-template-areas:
+    "parc ativ valor rel  seg"
+    "parc rec  valor can  seg"
+    "custos custos custos receita receita";
+  gap: 10px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 10px;
+  background: var(--line);
+}
+
+.bmc__parcerias { grid-area: parc; }
+.bmc__atividades { grid-area: ativ; }
+.bmc__recursos { grid-area: rec; }
+.bmc__valor { grid-area: valor; }
+.bmc__relacionamento { grid-area: rel; }
+.bmc__canais { grid-area: can; }
+.bmc__segmentos { grid-area: seg; }
+.bmc__custos { grid-area: custos; }
+.bmc__receita { grid-area: receita; }
+
+.bmc__block {
+  background: var(--paper-card);
+  border-radius: var(--radius);
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.16s ease, box-shadow 0.16s ease;
+}
+
+.bmc__block:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  z-index: 1;
+}
+
+.bmc__head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--line);
+}
+
+.bmc__icon {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.bmc__head h3 {
+  font-size: 0.74rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--teal-dark);
+}
+
+.bmc__block ul {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.bmc__block li {
+  position: relative;
+  padding-left: 14px;
+  font-size: 0.82rem;
+  line-height: 1.4;
+  color: var(--ink-soft);
+}
+
+.bmc__block li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 7px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--teal);
+}
+
+/* Proposta de valor em destaque */
+.bmc__block--valor {
+  background: var(--teal-tint);
+  outline: 2px solid var(--teal);
+  outline-offset: -2px;
+}
+
+.bmc__block--valor .bmc__head {
+  border-bottom-color: rgba(31, 111, 84, 0.25);
+}
+
+.bmc__block--valor li {
+  color: var(--ink);
+}
+
+.bmc__block--valor li::before {
+  background: var(--teal-dark);
+}
+
+/* Tablet: reorganiza em 2 colunas mantendo agrupamento lógico */
+@media (max-width: 860px) {
+  .bmc {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "valor valor"
+      "parc  ativ"
+      "rec   rel"
+      "can   seg"
+      "custos receita";
+  }
+}
+
+/* Mobile: empilha tudo, na ordem de leitura do BMC */
+@media (max-width: 560px) {
+  .bmc {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "valor"
+      "seg"
+      "can"
+      "rel"
+      "ativ"
+      "rec"
+      "parc"
+      "custos"
+      "receita";
+  }
+}

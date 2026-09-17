@@ -1,45 +1,39 @@
+/* ==========================================================
+   Tokens
+   ========================================================== */
 :root {
-  /* Paleta — tema saúde */
-  --brand-900: #0b3b52;
-  --brand-800: #0e4d6b;
-  --brand-700: #10708f;
-  --brand-600: #1391a8;
-  --brand-500: #17b0bd;
-  --teal-400: #2ec4c9;
-  --teal-300: #7ad9d3;
-  --green-500: #2fae7a;
-  --green-400: #4fd18f;
-  --accent: #ff6b57;
+  --paper: #f6f4ec;
+  --paper-card: #fffdf7;
+  --ink: #1e2a23;
+  --ink-soft: #4a564e;
+  --line: #d9d2bd;
 
-  --ink-900: #0c1b26;
-  --ink-700: #2b3d49;
-  --ink-500: #55707f;
-  --ink-300: #8ea4b0;
+  --teal: #1f6f54;
+  --teal-dark: #16513d;
+  --teal-tint: #e4efe9;
 
-  --bg: #f4fafb;
-  --surface: #ffffff;
-  --surface-alt: #eaf6f7;
-  --border: #d7e6e9;
+  --coral: #bd4a37;
+  --coral-tint: #f6e6e1;
 
-  --shadow-sm: 0 1px 3px rgba(11, 59, 82, 0.08);
-  --shadow-md: 0 8px 24px rgba(11, 59, 82, 0.1);
-  --shadow-lg: 0 20px 48px rgba(11, 59, 82, 0.16);
+  --amber: #a8791f;
+  --amber-tint: #f3ecd8;
 
-  --radius: 16px;
-  --radius-sm: 10px;
-  --maxw: 1120px;
+  --sky: #0ea5e9;
+  --mint: #10b981;
 
-  --font: 'Segoe UI', system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif;
+  --font-display: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --font-body: "IBM Plex Sans", "Segoe UI", Helvetica, Arial, sans-serif;
 
-  color-scheme: light;
-  font-family: var(--font);
-  color: var(--ink-700);
+  --radius: 6px;
+  --radius-lg: 12px;
+  --container: 1080px;
+
+  --shadow-sm: 0 1px 2px rgba(30, 42, 35, 0.06);
+  --shadow-md: 0 10px 30px rgba(30, 42, 35, 0.1);
 }
 
 * {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
 }
 
 html {
@@ -48,27 +42,40 @@ html {
 }
 
 body {
-  min-height: 100vh;
-  background: var(--bg);
-  color: var(--ink-700);
-  line-height: 1.6;
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.55;
   -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
 }
 
 h1, h2, h3, h4 {
-  color: var(--ink-900);
-  line-height: 1.2;
-  font-weight: 700;
+  font-family: var(--font-display);
+  color: var(--ink);
+  margin: 0;
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+p {
+  margin: 0;
+  color: var(--ink-soft);
 }
 
 a {
-  color: var(--brand-600);
-  text-decoration: none;
+  color: inherit;
 }
 
-a:hover {
-  color: var(--brand-800);
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+button {
+  font-family: inherit;
 }
 
 img {
@@ -76,17 +83,77 @@ img {
   display: block;
 }
 
-ul {
-  list-style: none;
-}
-
-button {
-  font-family: inherit;
-  cursor: pointer;
-}
-
 :focus-visible {
-  outline: 3px solid var(--teal-400);
-  outline-offset: 2px;
-  border-radius: 4px;
+  outline: 2px solid var(--teal);
+  outline-offset: 3px;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
+/* Ritmo visual: fundo levemente alternado entre as seções */
+main > .section:nth-of-type(even) {
+  background: var(--paper-card);
+}
+
+/* ==========================================================
+   Animações — reveal ao rolar + utilitários
+   ========================================================== */
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float-slow {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(18px, -22px) scale(1.06);
+  }
+}
+
+@keyframes dash-move {
+  to {
+    stroke-dashoffset: -32;
+  }
+}
+
+.reveal {
+  opacity: 0;
+}
+
+.reveal.is-visible {
+  animation: reveal-up 0.7s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+}
+
+.reveal.is-visible[data-delay="1"] { animation-delay: 0.08s; }
+.reveal.is-visible[data-delay="2"] { animation-delay: 0.16s; }
+.reveal.is-visible[data-delay="3"] { animation-delay: 0.24s; }
+.reveal.is-visible[data-delay="4"] { animation-delay: 0.32s; }
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .reveal {
+    opacity: 1;
+  }
 }

@@ -1,0 +1,134 @@
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: 76px 0 64px;
+  border-bottom: 1px solid var(--line);
+}
+
+.hero__bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero__blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.5;
+  animation: float-slow 14s ease-in-out infinite;
+}
+
+.hero__blob--a {
+  width: 340px;
+  height: 340px;
+  top: -120px;
+  right: -60px;
+  background: radial-gradient(circle, rgba(14, 165, 233, 0.35), transparent 70%);
+}
+
+.hero__blob--b {
+  width: 300px;
+  height: 300px;
+  bottom: -140px;
+  left: -40px;
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.28), transparent 70%);
+  animation-delay: 3s;
+}
+
+.hero__row {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 56px;
+}
+
+.hero__text {
+  max-width: 560px;
+}
+
+.hero__eyebrow {
+  font-size: 0.85rem;
+  color: var(--teal-dark);
+  margin-bottom: 14px;
+}
+
+.hero h1 {
+  font-size: clamp(2.1rem, 4vw, 3.1rem);
+  letter-spacing: -0.01em;
+}
+
+.hero__lead {
+  margin-top: 20px;
+  font-size: 1.05rem;
+  max-width: 46ch;
+}
+
+.hero__actions {
+  display: flex;
+  gap: 14px;
+  margin-top: 32px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  height: 44px;
+  padding: 0 20px;
+  border-radius: var(--radius);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.btn--primary {
+  background: var(--teal);
+  color: #fff;
+  border: 1px solid var(--teal);
+}
+
+.btn--primary:hover {
+  background: var(--teal-dark);
+  border-color: var(--teal-dark);
+}
+
+.btn--ghost {
+  color: var(--ink);
+  border: 1px solid var(--line);
+}
+
+.btn--ghost:hover {
+  border-color: var(--teal);
+  color: var(--teal-dark);
+}
+
+.hero__stamp {
+  flex-shrink: 0;
+  color: var(--teal);
+  opacity: 0.95;
+}
+
+.hero__stamp img {
+  width: 300px;
+  height: 300px;
+  object-fit: contain;
+}
+
+@media (max-width: 900px) {
+  .hero__row {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    gap: 24px;
+  }
+  .hero__stamp {
+    align-self: center;
+  }
+  .hero__stamp img {
+    width: 220px;
+    height: 220px;
+  }
+}
