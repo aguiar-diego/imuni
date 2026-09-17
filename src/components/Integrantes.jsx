@@ -36,6 +36,7 @@ export default function Integrantes() {
   return (
     <section id="integrantes" className="section integrantes">
       <div className="container">
+        <span className="eyebrow reveal">Grupo República</span>
         <h2 className="reveal">Integrantes</h2>
         <p className="integrantes__lead reveal">
           Grupo República — responsável pela concepção e desenvolvimento do Imuni.

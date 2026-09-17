@@ -12,6 +12,7 @@ export default function QuemSomos() {
     <section id="quem-somos" className="section quem-somos">
       <div className="container quem-somos__row">
         <div className="quem-somos__text reveal">
+          <span className="eyebrow">O projeto</span>
           <h2>Quem somos</h2>
           <p>
             Somos o grupo <strong>República</strong>, da disciplina de Gestão de Projetos de TI,

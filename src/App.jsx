@@ -6,10 +6,11 @@ import Canvas from './components/Canvas.jsx'
 import Integrantes from './components/Integrantes.jsx'
 import Documentos from './components/Documentos.jsx'
 import Footer from './components/Footer.jsx'
-import { useReveal } from './hooks/useReveal.js'
+import { useReveal, useCardGlow } from './hooks/useReveal.js'
 
 export default function App() {
   useReveal()
+  useCardGlow('.smart__card')
 
   return (
     <>

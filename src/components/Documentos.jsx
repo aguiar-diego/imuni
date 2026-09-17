@@ -44,6 +44,7 @@ export default function Documentos() {
   return (
     <section id="documentos" className="section documentos">
       <div className="container">
+        <span className="eyebrow reveal">Entregáveis</span>
         <h2 className="reveal">Documentos</h2>
         <p className="documentos__lead reveal">
           Entregas exigidas pela disciplina ao longo do semestre e o status atual de cada uma.

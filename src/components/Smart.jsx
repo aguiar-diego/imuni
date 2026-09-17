@@ -32,6 +32,7 @@ export default function Smart() {
   return (
     <section id="objetivos" className="section smart">
       <div className="container">
+        <span className="eyebrow reveal">Metas do MVP</span>
         <h2 className="reveal">Objetivos SMART</h2>
         <p className="smart__lead reveal">
           As metas que guiam o desenvolvimento do MVP do Imuni.

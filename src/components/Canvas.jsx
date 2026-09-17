@@ -106,6 +106,7 @@ export default function Canvas() {
   return (
     <section id="canvas" className="section canvas">
       <div className="container">
+        <span className="eyebrow reveal">Modelo de negócio</span>
         <h2 className="reveal">Business Model Canvas</h2>
         <p className="canvas__lead reveal">
           O modelo de negócio do Imuni nos nove blocos clássicos do BMC.

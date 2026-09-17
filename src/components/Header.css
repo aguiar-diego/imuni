@@ -2,16 +2,23 @@
   position: sticky;
   top: 0;
   z-index: 20;
-  background: rgba(246, 244, 236, 0.92);
-  backdrop-filter: saturate(140%) blur(6px);
-  border-bottom: 1px solid var(--line);
+  background: rgba(238, 244, 251, 0.75);
+  backdrop-filter: saturate(160%) blur(12px);
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+}
+
+.site-header--scrolled {
+  background: rgba(255, 255, 255, 0.82);
+  border-bottom-color: var(--line);
+  box-shadow: var(--shadow-sm);
 }
 
 .site-header__row {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 68px;
+  height: 72px;
 }
 
 .brand {
@@ -22,7 +29,7 @@
 }
 
 .brand__logo {
-  width: 104px;
+  width: 108px;
   transition: transform 0.18s ease;
 }
 
@@ -32,15 +39,16 @@
 
 .site-nav ul {
   display: flex;
-  gap: 28px;
+  gap: 26px;
 }
 
 .site-nav a {
   position: relative;
   text-decoration: none;
-  font-size: 0.95rem;
+  font-size: 0.92rem;
+  font-weight: 500;
   color: var(--ink-soft);
-  padding-bottom: 3px;
+  padding-bottom: 4px;
   transition: color 0.15s ease;
 }
 
@@ -50,16 +58,17 @@
   left: 0;
   bottom: 0;
   width: 100%;
-  height: 1.5px;
-  background: var(--teal);
+  height: 2px;
+  border-radius: 2px;
+  background: var(--grad);
   transform: scaleX(0);
   transform-origin: left;
-  transition: transform 0.2s ease;
+  transition: transform 0.22s ease;
 }
 
 .site-nav a:hover,
 .site-nav a:focus-visible {
-  color: var(--teal-dark);
+  color: var(--ink);
 }
 
 .site-nav a:hover::after,
@@ -69,7 +78,7 @@
 
 @media (max-width: 640px) {
   .brand__logo {
-    width: 88px;
+    width: 92px;
   }
   .site-nav ul {
     gap: 14px;
@@ -77,6 +86,6 @@
     justify-content: flex-end;
   }
   .site-nav a {
-    font-size: 0.85rem;
+    font-size: 0.82rem;
   }
 }

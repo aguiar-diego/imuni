@@ -51,7 +51,7 @@ export default function Logo({ className = '', animated = true, title = 'Imuni' 
         d="M 290 60 C 290 60, 275 35, 275 25 A 15 15 0 1 1 305 25 C 305 35, 290 60, 290 60 Z"
         fill="var(--sky, #0ea5e9)"
       />
-      <circle cx="290" cy="25" r="5" fill="var(--paper-card, #fffdf7)" />
+      <circle cx="290" cy="25" r="5" fill="var(--surface, #ffffff)" />
     </svg>
   )
 }
