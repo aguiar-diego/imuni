@@ -1,0 +1,15 @@
+Coloque aqui os documentos que devem ficar disponíveis para download no site.
+
+O card "Proposta de Projeto" na seção Documentos aponta para:
+    public/docs/imuni-proposta.pdf
+
+Passos:
+1. Exporte a proposta (a que tem descrição, objetivos SMART e o Business Model Canvas) como PDF.
+2. Renomeie o arquivo para: imuni-proposta.pdf
+3. Coloque-o nesta pasta (public/docs/).
+4. Faça commit. Pronto — o botão "Baixar PDF" vai funcionar.
+
+Para adicionar novos documentos futuros:
+- Coloque o arquivo nesta pasta.
+- Adicione um novo item no array DOCUMENTS no topo de src/App.jsx,
+  apontando href para `${BASE}docs/nome-do-arquivo.pdf`.
