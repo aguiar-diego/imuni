@@ -98,3 +98,24 @@
     margin: 0 auto;
   }
 }
+
+.membro__apresentacao {
+  position: relative;
+  margin-top: 14px;
+  padding-top: 12px;
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: var(--ink-faint);
+  font-style: italic;
+}
+
+.membro__apresentacao::before {
+  content: '“';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 32px;
+  height: 2px;
+  background: var(--teal-dark);
+  border-radius: 2px;
+}

@@ -9,18 +9,21 @@ const MEMBROS = [
     papel: 'Gerente de projeto',
     ra: 'Nº USP 15574221',
     foto: 'integrantes/diego_gpti.jpg',
+    apresentacao: 'Campineiro, apaixonado por futebol, corrida de rua e LoL nas horas vagas.',
   },
   {
     nome: 'Luis Gustavo Cerqueira',
     papel: 'Desenvolvimento back-end',
     ra: 'Nº USP 15525959',
     foto: 'integrantes/gustavo_gpti.jpg',
+    apresentacao: 'De Barueri, apaixonado por jogos, natação e futebol. De vez em quando, joga muito mal no CS2.',
   },
   {
     nome: 'Mateus de Sales',
     papel: 'Desenvolvimento front-end',
     ra: 'Nº USP 15640371',
     foto: 'integrantes/mateus_gpti.jpg',
+    apresentacao: 'De Campinas, apaixonado por futebol e corrida de rua. No tempo livre, jogador de League of Legends.',
   },
 ]
 
@@ -59,6 +62,7 @@ export default function Integrantes() {
                 <p className="membro__nome">{membro.nome}</p>
                 <p className="membro__papel">{membro.papel}</p>
                 <p className="membro__ra">{membro.ra}</p>
+                <p className="membro__apresentacao">{membro.apresentacao}</p>
               </div>
             </li>
           ))}
