@@ -20,6 +20,7 @@ const MEMBROS = [
     nome: 'Mateus de Sales',
     papel: 'Desenvolvimento front-end',
     ra: 'Nº USP 15640371',
+    foto: 'integrantes/mateus_gpti.jpg',
   },
 ]
 
