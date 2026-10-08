@@ -35,6 +35,20 @@ const DOCUMENTOS = [
     acao: 'Baixar PDF',
   },
   {
+    nome: 'Plano de Gerenciamento de Qualidade (PGQ)',
+    data: '07 out',
+    status: 'entregue',
+    href: `${BASE}docs/PGQ_Imuni.pdf`,
+    acao: 'Baixar PDF',
+  },
+  {
+    nome: 'Gestão de Recursos',
+    data: '07 out',
+    status: 'entregue',
+    href: `${BASE}docs/Gestao_de_Recursos_Imuni.pdf`,
+    acao: 'Baixar PDF',
+  },
+  {
     nome: 'Próximas entregas da disciplina',
     data: 'a definir',
     status: 'pendente',
