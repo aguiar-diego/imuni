@@ -49,6 +49,13 @@ const DOCUMENTOS = [
     acao: 'Baixar PDF',
   },
   {
+    nome: 'Cronograma e Objetivos',
+    data: '09 out',
+    status: 'entregue',
+    href: `${BASE}docs/cronograma.pdf`,
+    acao: 'Baixar PDF',
+  },
+  {
     nome: 'Próximas entregas da disciplina',
     data: 'a definir',
     status: 'pendente',
