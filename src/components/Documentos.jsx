@@ -56,6 +56,13 @@ const DOCUMENTOS = [
     acao: 'Baixar PDF',
   },
   {
+    nome: 'Plano de Gerenciamento de Custos (PGC)',
+    data: '12 out',
+    status: 'entregue',
+    href: `${BASE}docs/PGC_Imuni.pdf`,
+    acao: 'Baixar PDF',
+  },
+  {
     nome: 'Próximas entregas da disciplina',
     data: 'a definir',
     status: 'pendente',
