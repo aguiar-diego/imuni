@@ -1,32 +1,32 @@
+import { useEffect, useState } from 'react'
 import './Header.css'
+import './Logo.css'
+import Logo from './Logo.jsx'
 
 const LINKS = [
   { href: '#quem-somos', label: 'Quem somos' },
+  { href: '#objetivos', label: 'Objetivos' },
+  { href: '#canvas', label: 'Canvas' },
   { href: '#integrantes', label: 'Integrantes' },
   { href: '#documentos', label: 'Documentos' },
 ]
 
 export default function Header() {
-  return (
-    <header className="site-header">
-      <div className="container site-header__row">
-        <a className="brand" href="#topo">
-          <span className="brand__mark" aria-hidden="true">
-            <svg viewBox="0 0 24 24" width="20" height="20" fill="none">
-              <path
-                d="M4 12.5 9.5 18 20 6"
-                stroke="currentColor"
-                strokeWidth="2.4"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </span>
-          <span className="brand__text">
-            Carteira Digital <em>de Vacinação</em>
-          </span>
-        </a>
+  const [scrolled, setScrolled] = useState(false)
 
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 12)
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
+  return (
+    <header className={`site-header${scrolled ? ' site-header--scrolled' : ''}`}>
+      <div className="container site-header__row">
+        <a className="brand" href="#topo" aria-label="Imuni — início">
+          <Logo className="brand__logo" title="Imuni" />
+        </a>
         <nav className="site-nav" aria-label="Navegação principal">
           <ul>
             {LINKS.map((link) => (
