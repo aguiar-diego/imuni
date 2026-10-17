@@ -63,6 +63,13 @@ const DOCUMENTOS = [
     acao: 'Baixar PDF',
   },
   {
+    nome: 'Plano de Gerenciamento de Comunicações',
+    data: '16 out',
+    status: 'entregue',
+    href: `${BASE}docs/PC_Imuni.pdf`,
+    acao: 'Baixar PDF',
+  },
+  {
     nome: 'Próximas entregas da disciplina',
     data: 'a definir',
     status: 'pendente',
