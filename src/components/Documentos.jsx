@@ -70,6 +70,13 @@ const DOCUMENTOS = [
     acao: 'Baixar PDF',
   },
   {
+    nome: 'Plano de Gestão de Riscos',
+    data: '29 out',
+    status: 'entregue',
+    href: `${BASE}docs/GR_Imuni.pdf`,
+    acao: 'Baixar PDF',
+  },
+  {
     nome: 'Próximas entregas da disciplina',
     data: 'a definir',
     status: 'pendente',
