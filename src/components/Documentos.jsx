@@ -84,6 +84,13 @@ const DOCUMENTOS = [
     acao: 'Baixar PDF',
   },
   {
+    nome: 'Dinâmica da apresentação: jogo EACH Grand Prix',
+    data: '6 nov',
+    status: 'entregue',
+    href: 'https://cerqueira11.github.io/each-grand-prix/',
+    acao: 'Jogar',
+  },
+  {
     nome: 'Próximas entregas da disciplina',
     data: 'a definir',
     status: 'pendente',
