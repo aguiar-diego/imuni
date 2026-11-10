@@ -77,6 +77,13 @@ const DOCUMENTOS = [
     acao: 'Baixar PDF',
   },
   {
+    nome: 'Apresentação do projeto',
+    data: '6 nov',
+    status: 'entregue',
+    href: `${BASE}docs/08-Gestao de Aquisicoes do Projeto - Apresentacao.pdf`,
+    acao: 'Baixar PDF',
+  },
+  {
     nome: 'Próximas entregas da disciplina',
     data: 'a definir',
     status: 'pendente',
