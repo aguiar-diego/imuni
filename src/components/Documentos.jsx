@@ -91,6 +91,13 @@ const DOCUMENTOS = [
     acao: 'Jogar',
   },
   {
+    nome: 'Gestão de Aquisições do Projeto - Matriz Make or Buy',
+    data: '13 nov',
+    status: 'entregue',
+    href: `${BASE}docs/GAP.pdf`,
+    acao: 'Baixar PDF',
+  },
+  {
     nome: 'Próximas entregas da disciplina',
     data: 'a definir',
     status: 'pendente',
