@@ -3,33 +3,65 @@
 }
 
 .documentos__lead {
-  margin-top: -14px;
-  margin-bottom: 32px;
+  margin-bottom: 34px;
   max-width: 56ch;
+  font-size: 1.02rem;
 }
 
 .documentos__lista {
-  border-top: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
 .documento {
   display: flex;
   align-items: center;
-  gap: 20px;
-  padding: 18px 4px;
-  border-bottom: 1px solid var(--line);
+  gap: 18px;
+  padding: 18px 20px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+.documento:hover {
+  transform: translateX(3px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--line-strong);
 }
 
 .documento__nome {
   flex: 1;
   font-size: 1rem;
+  font-weight: 500;
   color: var(--ink);
 }
 
+.documento__link {
+  flex-shrink: 0;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--teal-dark);
+  text-decoration: none;
+  white-space: nowrap;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: var(--teal-tint);
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.documento__link:hover,
+.documento__link:focus-visible {
+  background: var(--teal);
+  color: #fff;
+}
+
 .documento__data {
-  color: var(--ink-soft);
-  font-size: 0.9rem;
-  min-width: 60px;
+  color: var(--ink-faint);
+  font-size: 0.85rem;
+  min-width: 64px;
   text-align: right;
 }
 
@@ -37,15 +69,15 @@
   flex-shrink: 0;
   min-width: 112px;
   text-align: center;
-  font-size: 0.78rem;
-  font-weight: 500;
+  font-size: 0.76rem;
+  font-weight: 600;
   padding: 5px 10px;
   border-radius: 999px;
 }
 
 .status--entregue {
-  background: var(--teal-tint);
-  color: var(--teal-dark);
+  background: var(--mint-tint);
+  color: var(--mint-dark);
 }
 
 .status--andamento {
@@ -65,6 +97,9 @@
   .documento__nome {
     order: 3;
     flex-basis: 100%;
+  }
+  .documento__link {
+    order: 4;
   }
   .documento__data {
     margin-left: auto;

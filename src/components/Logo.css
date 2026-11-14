@@ -1,0 +1,13 @@
+.logo-mark {
+  display: block;
+  height: auto;
+  color: var(--ink);
+}
+
+.logo-mark__route {
+  animation: none;
+}
+
+.logo-mark--animated .logo-mark__route {
+  animation: dash-move 1.6s linear infinite;
+}

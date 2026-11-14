@@ -1,31 +1,44 @@
 import './QuemSomos.css'
 
 const FICHA = [
-  { label: 'Disciplina', value: 'Gestão de Projetos' },
-  { label: 'Instituição', value: 'Nome da instituição' },
-  { label: 'Período letivo', value: '2026 / 2' },
-  { label: 'Metodologia', value: 'Scrum adaptado' },
+  { label: 'Projeto', value: 'Imuni' },
+  { label: 'Disciplina', value: 'Gestão de Projetos de TI (GPTI)' },
+  { label: 'Curso', value: 'Sistemas de Informação · USP' },
+  { label: 'Grupo', value: 'República' },
 ]
 
 export default function QuemSomos() {
   return (
     <section id="quem-somos" className="section quem-somos">
       <div className="container quem-somos__row">
-        <div className="quem-somos__text">
+        <div className="quem-somos__text reveal">
+          <span className="eyebrow">O projeto</span>
           <h2>Quem somos</h2>
           <p>
-            Somos um grupo da disciplina de Gestão de Projetos e estamos desenvolvendo a{' '}
-            <strong>Carteira Digital de Vacinação</strong>: um sistema pensado para reunir em
-            um só lugar o histórico de doses de uma pessoa, avisos de campanhas e datas de
-            reforço, facilitando o acesso a essas informações tanto para o cidadão quanto
-            para os postos de saúde.
+            Somos o grupo <strong>República</strong>, da disciplina de Gestão de Projetos de TI,
+            e estamos desenvolvendo o <strong>Imuni</strong>: uma carteira de vacinação digital
+            integrada a um mapa em tempo real, que cruza o histórico de saúde do usuário com a
+            geolocalização para mostrar onde ele pode tomar a vacina que precisa — pelo SUS, de
+            graça, ou na rede privada quando for o caso.
           </p>
           <p>
-            Este site que você está vendo agora não é o sistema em si — ele é o nosso espaço
-            de acompanhamento do trabalho: aqui documentamos quem participa do grupo e damos
-            visibilidade ao andamento das entregas pedidas pela disciplina.
+            O objetivo é resolver a fragmentação das informações sobre vacinação, hoje espalhadas
+            em jornais, portais municipais e no boca a boca, e superar as limitações do aplicativo
+            oficial <em>Meu SUS Digital</em>.
+          </p>
+          <p>
+            Este site não é o produto em si — é o nosso painel de acompanhamento, onde reunimos a
+            proposta, os objetivos, o modelo de negócio e o andamento das entregas da disciplina.
           </p>
         </div>
+        <dl className="ficha reveal" data-delay="2">
+          {FICHA.map((item) => (
+            <div className="ficha__item" key={item.label}>
+              <dt>{item.label}</dt>
+              <dd>{item.value}</dd>
+            </div>
+          ))}
+        </dl>
       </div>
     </section>
   )
