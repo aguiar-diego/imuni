@@ -98,6 +98,13 @@ const DOCUMENTOS = [
     acao: 'Baixar PDF',
   },
   {
+    nome: 'Gestão de Stakeholders do Projeto - Matriz de Poder e Interesse',
+    data: '14 nov',
+    status: 'entregue',
+    href: `${BASE}docs/GSH.pdf`,
+    acao: 'Baixar PDF',
+  },
+  {
     nome: 'Próximas entregas da disciplina',
     data: 'a definir',
     status: 'pendente',
