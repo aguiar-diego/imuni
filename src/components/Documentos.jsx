@@ -105,6 +105,13 @@ const DOCUMENTOS = [
     acao: 'Baixar PDF',
   },
   {
+    nome: 'Termo de Abertura do Projeto (TAP) versão 2.0',
+    data: '19 nov',
+    status: 'entregue',
+    href: `${BASE}docs/TAP2.0_Imuni.pdf`,
+    acao: 'Baixar PDF',
+  },
+  {
     nome: 'Próximas entregas da disciplina',
     data: 'a definir',
     status: 'pendente',
